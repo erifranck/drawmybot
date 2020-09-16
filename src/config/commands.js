@@ -2,15 +2,18 @@ const copies = require("../data/copies.json");
 
 const commands = {
   private: {
-    merch: copies.commands.merch,
     patreon: copies.commands.patreon,
-    blog: copies.commands.blog,
+    comic: copies.commands.comic,
     social: copies.commands.social,
-    courses: copies.commands.courses,
     twitch: copies.commands.twitch,
     youtube: copies.commands.youtube
   },
   public: {
+    patreon: copies.commands.patreon,
+    comic: copies.commands.comic,
+    social: copies.commands.social,
+    twitch: copies.commands.twitch,
+    youtube: copies.commands.youtube,
     discord: copies.commands.discord
   }
 };

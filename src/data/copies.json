@@ -1,17 +1,16 @@
 {
   "commands": {
-    "merch": "HolidayPresent El nuevo merchandising está aquí....   Compruébalo: https://merch.streamelements.com/gndxdev",
-    "patreon": "GivePLZ Quieres apoyar este contenido: Visita mi Patreon: https://www.patreon.com/gndx",
-    "blog": "TakeNRG Te comparto mi blog: https://gndx.dev y mi canal de YouTube donde comparto mis conferencias: https://youtube.com/c/oscarbarajas : Quieres apoyar mi contenido educativo visita mi Patreon: https://www.patreon.com/gndx",
-    "social": "Mis Redes sociales: \n Instagram: https://instagram.com/gndx \n Twitter: https://twitter.com/gndx \n GitHub: https://github.com/gndx",
-    "courses": "🎓📗 Mis cursos en Platzi: https://platzi.com/teachers/gndx/",
-    "twitch": "imGlitch Recuerda todos los domingos a las 6:00 P.M. Hablo de tecnología en vivo en este canal, ¡Sígueme!",
-    "youtube": "EarthDay Suscríbete a mi canal de YouTube donde comparto mis conferencias https://youtube.com/c/oscarbarajas",
-    "discord": "Comunidad de GnDx en Discord: https://discord.gg/brutEYf VoHiYo!"
+    "merch": "",
+    "patreon": "erifraGithub Quieres apoyar este contenido: Visita mi Patreon: https://www.patreon.com/erifranck",
+    "comic": "erifraWhut te comparto mi webcomi https://drawmy.codes \n canal de youtube : https://youtube.com/c/erifrancknunez \n Quieres apoyar mi contenido educativo visita mi Patreon: https://www.patreon.com/erifranck",
+    "social": "Mis Redes sociales: \n Instagram: https://instagram.com/erifranck \n Instagram: https://instagram.com/toonfranck \n Twitter: https://twitter.com/erifranckn \n GitHub: https://github.com/erifranck",
+    "twitch": "imGlitch los viernes tenemos la dinamica drawme, donde dibujo tu version caricatura",
+    "youtube": "erifraGithub Suscríbete a mi canal de YouTube donde comparto mis videos animados y mucho mas https://youtube.com/c/erifrancknunez",
+    "discord": "Comunidad Code heroes: https://discord.gg/Ucr7aT erifraWhut"
   },
   "greetings": {
     "welcome": "¡Bienvenidos! ;)",
     "hello": "imGlitch Hola",
-    "subs": "¡Gracias por suscribirte! BloodTrail"
+    "subs": "¡Gracias por suscribirte! erifraWhut"
   }
 }

@@ -1,22 +1,23 @@
-const Twitter = require("twitter");
+// const Twitter = require("twitter");
 const random = require("../utils/random");
-const fetchData = require("../utils/fetchData");
 const serviceAccount = require("../serviceAccountKey.json");
 const admin = require("firebase-admin");
 require('dotenv').config();
 
 const DB = process.env.FIRESTORE;
 
-const clientTwitter = new Twitter({
+/* 
+  const clientTwitter = new Twitter({
   consumer_key: process.env.CONSUMER_KEY,
   consumer_secret: process.env.CONSUMER_SECRECT,
   access_token_key: process.env.TOKEN_KEY,
   access_token_secret: process.env.TOKEN_SECRET
 });
+*/
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
-  databaseURL: "https://gndxtwitchbot.firebaseio.com"
+  databaseURL: "https://followdraw-b1171.firebaseio.com"
 });
 
 class CustomCommands {
@@ -24,47 +25,35 @@ class CustomCommands {
     this.client = client;
     this.commands = {
       winner: { fn: this.winner, type: "private" },
-      twbot: { fn: this.twbot, type: "private" },
-      rifa: { fn: this.rifa, type: "public" },
-      song: { fn: this.song, type: "public" }
+      drawme: { fn: this.drawme, type: "public" },
+      saludame: { fn: this.saludame, type: "public" },
     };
     this.db = admin.firestore();
     this.userList = [];
   }
 
-  twbot(_, target, msg) {
-    let msgTwitter = msg.substr(6);
-    const tweet = `${msgTwitter} en vivo: https://twitch.tv/gndxdev #EStreamerCoders`;
-    clientTwitter.post("statuses/update", { status: tweet }, (error, tweet) => {
-      if (error) throw error;
-      const tweetUrl = `https://twitter.com/i/web/status/${tweet.id_str}`;
+  async drawme(context, target, msg) {
+    const imageUrl = msg.replace(/(!drawme)/, "").trim()
+    if (this.userList.map(item => item.name).includes(context.username) && false) {
       this.client.say(
         target,
-        `¡Nuevo Tweet, dale RT! MrDestructoid ${tweetUrl}`
-      );
-    });
-  }
-
-  async song(context, target) {
-    let pretzel = "https://www.pretzel.rocks/api/v1/playing/twitch/gndxdev/";
-    let song = await fetchData(pretzel);
-    this.client.say(target, `@${context.username}, ${song}`);
-  }
-
-  async rifa(context, target) {
-    if (this.userList.includes(context.username)) {
-      this.client.say(
-        target,
-        `@${context.username}, ¡Ya estas particiando BibleThump!`
+        `@${context.username}, ¡Ya tengo tu imagen te estare dibujando pronto!`
       );
     } else {
-      this.userList.push(context.username);
-      await this.db.collection(DB).add({ username: context.username });
+      const userToDraw = { name: context.username, url: imageUrl}
+      this.userList.push(userToDraw);
+      await this.db.collection(DB).add(userToDraw);
       this.client.say(
         target,
-        `@${context.username}, ¡Registro exitoso! VoHiYo!`
+        `@${context.username}, Genial ya tengo tu imagen, pronto te dibujare`
       );
     }
+  }
+  async saludame(context, target, msg) {
+    this.client.say(
+      target,
+      `@${context.username}, ¡Registro exitoso! VoHiYo! ${msg}`
+    );
   }
 
   async winner(context, target) {

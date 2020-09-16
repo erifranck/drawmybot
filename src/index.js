@@ -5,42 +5,40 @@ const greetings = require("./config/greetings");
 const Commands = require("./lib/commands");
 require("dotenv").config();
 
-const welcomeList = ["hola", "buenas", "saludos"];
-const BOTUSERNAME = process.env.BOT_USERNAME;
-const CHANNEL = process.env.CHANNELS_NAME;
-const PASSWORD = process.env.OAUTH_TOKEN;
+  const welcomeList = ["hola", "buenas", "saludos"];
+  const BOTUSERNAME = process.env.BOT_USERNAME;
+  const CHANNEL = process.env.CHANNELS_NAME;
+  const PASSWORD = process.env.OAUTH_TOKEN;
 
-const client = new tmi.client({
-  identity: {
-    username: BOTUSERNAME,
-    password: PASSWORD,
-  },
-  channels: CHANNEL.split(","),
-});
-
-const comm = new Commands(client);
-
-const sendMessage = (target, text, list, message) => {
-  list.some((t) => {
-    const includes = text.replace(/ /g, "").includes(t);
-    if (includes) client.say(target, message);
-    return text.includes(t);
+  const client = new tmi.client({
+    identity: {
+      username: BOTUSERNAME,
+      password: PASSWORD,
+    },
+    channels: CHANNEL.split(","),
   });
-};
+
+  const comm = new Commands(client);
+
+  const sendMessage = (target, text, list, message) => {
+    list.some((t) => {
+      const includes = text.replace(/ /g, "").includes(t);
+      if (includes) client.say(target, message);
+      return text.includes(t);
+    });
+  };
 
 cron.schedule("*/7 * * * *", () => {
   client.say(`#${CHANNEL}`, randomMsg());
 });
 
-client.on("message", async (target, context, msg, self) => {
-  if (self) return;
-  const text = msg.toLowerCase();
-
-  comm.resolve(context, target, text);
+client.on("message", async (target, context, msg) => {
+  if (context.username === BOTUSERNAME) return;
+  comm.resolve(context, target, msg);
 
   sendMessage(
     target,
-    text,
+    msg,
     welcomeList,
     `@${context.username} ${greetings.hello}`
   );

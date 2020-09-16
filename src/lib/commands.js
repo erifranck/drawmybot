@@ -1,7 +1,7 @@
 const commands = require("../config/commands");
 const CustomCommands = require("./customCommands");
 
-const STREAMER = "gndxdev";
+const STREAMER = "erifranck";
 
 class Commands extends CustomCommands {
   constructor(client) {
@@ -12,8 +12,8 @@ class Commands extends CustomCommands {
     const commandMessage = msg.replace("!", "");
     const privateCommands = context.username === STREAMER;
     const allCommands = {
-      ...(privateCommands && this.commands),
       ...(privateCommands && commands.private),
+      ...this.commands,
       ...commands.public
     };
 
