@@ -1,4 +1,4 @@
-# gndxdev-bot
+# DrawMyBot
 
 gndxdev-bot send messages to Twitch.
 
