@@ -1,19 +1,9 @@
-// const Twitter = require("twitter");
 const random = require("../utils/random");
 const serviceAccount = require("../serviceAccountKey.json");
 const admin = require("firebase-admin");
 require('dotenv').config();
 
 const DB = process.env.FIRESTORE;
-
-/* 
-  const clientTwitter = new Twitter({
-  consumer_key: process.env.CONSUMER_KEY,
-  consumer_secret: process.env.CONSUMER_SECRECT,
-  access_token_key: process.env.TOKEN_KEY,
-  access_token_secret: process.env.TOKEN_SECRET
-});
-*/
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),

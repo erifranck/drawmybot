@@ -14,6 +14,8 @@ const commands = {
     social: copies.commands.social,
     twitch: copies.commands.twitch,
     youtube: copies.commands.youtube,
+    pc: copies.commands.pc,
+    setup: copies.commands.setup,
     discord: copies.commands.discord
   }
 };

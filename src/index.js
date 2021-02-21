@@ -28,7 +28,7 @@ require("dotenv").config();
     });
   };
 
-cron.schedule("*/7 * * * *", () => {
+cron.schedule("*/9 * * * *", () => {
   client.say(`#${CHANNEL}`, randomMsg());
 });
 
@@ -51,7 +51,7 @@ client.on("subscription", (channel, username) => {
 client.on("raided", (channel, username, viewers) => {
   client.say(
     channel,
-    `TombRaid ¡Raid!, Gracias a ${username} se han unido ${viewers} espectadores, ${greetings.welcome} PogChamp`
+    `¡Raid!, Gracias a ${username} se han unido ${viewers} espectadores, ${greetings.welcome} PogChamp`
   );
 });
 

@@ -1,12 +1,13 @@
 {
   "commands": {
     "merch": "",
-    "patreon": "erifraGithub Quieres apoyar este contenido: Visita mi Patreon: https://www.patreon.com/erifranck",
-    "comic": "erifraWhut te comparto mi webcomi https://drawmy.codes \n canal de youtube : https://youtube.com/c/erifrancknunez \n Quieres apoyar mi contenido educativo visita mi Patreon: https://www.patreon.com/erifranck",
+    "comic": "Te comparto mi webcomic https://drawmy.codes \n canal de youtube : https://youtube.com/c/erifrancknunez \n Quieres apoyar mi contenido educativo visita mi Patreon: https://www.patreon.com/erifranck",
     "social": "Mis Redes sociales: \n Instagram: https://instagram.com/erifranck \n Instagram: https://instagram.com/toonfranck \n Twitter: https://twitter.com/erifranckn \n GitHub: https://github.com/erifranck",
     "twitch": "imGlitch los viernes tenemos la dinamica drawme, donde dibujo tu version caricatura",
     "youtube": "erifraGithub Suscríbete a mi canal de YouTube donde comparto mis videos animados y mucho mas https://youtube.com/c/erifrancknunez",
-    "discord": "Comunidad Code heroes: https://discord.gg/Ucr7aT erifraWhut"
+    "discord": "Comunidad Code heroes: https://discord.gg/Ucr7aT erifraWhut",
+    "setup": "Elgato Stream deck \n Wacom cintiq pro 24, ipad pro 2018, logitech c920 \n wacom remote keys \n wacom cintiq 16 \n rode nt-usb \n pc master race consultas con !pc",
+    "pc": "Mi pc posee: \n tarjeta de video: RTX-2070 super \n ram: 64gb corsair \n Memoria: 2 Samsung Evo 920 1TB SSD y 6TB HDD \n Tarjeta madre: Aurus B550 Elite \n Fuente de poder: EVGA 850 G5"
   },
   "greetings": {
     "welcome": "¡Bienvenidos! ;)",
